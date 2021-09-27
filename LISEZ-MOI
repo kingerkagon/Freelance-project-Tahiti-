@@ -1,0 +1,22 @@
+# BIBLE GROUPE ALINE
+
+Bible groupe Aline est un logiciel permettant de compiler les analyses de prix mensuelles et annuelles de l'année en cours et de l'année suivante.
+
+## AVANT DE LANCER LE PROGRAMME
+
+Il faut convertir les fichiers .out en fichiers .txt
+Pour cela, ouvrez les fichiers 1 par 1 à partir du bloc note, et cliquez sur "enregistrer sous", ajouté "convertit" à la fin du nom du fichier et
+choisissez l'endroit où vous voulez le sauvegarder. Vérifiez que le format du fichier sauvegarde est bien .txt
+
+## POUR LANCER LE PROGRAMME
+
+Simplement un fichier exécutable à lancer
+
+## FICHIERS EN SORTIE
+
+4 fichiers Excels
+
+## AUTEUR
+
+Eric STUHLFAUTH
+eric.stuhlfauth@gmail.com
