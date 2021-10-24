@@ -7,7 +7,7 @@ class stacker:
     def file_stacker(self):
 
         #---------------------------------------------------------------------------------------------------------------
-        input1 = 'Bible résultat.xlsx'
+        input1 = 'Bible resultat.xlsx'
         # Opens a session of Excel
         excel_2020 = win32com.client.Dispatch("Excel.Application")
         # keeps window closed and ignores errors
