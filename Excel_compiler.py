@@ -7,10 +7,6 @@ import numpy
 import json
 from Stacker import stacker
 
-#Ensuite créer un for loop avec les 4 fichiers
-#Empiler les fichiers
-# s'occuper des dernières lignes
-
 class Excel_compiler:
     def Excel_file_open(file_to_search,sheet_to_search):
         # Opens a session of Excel
@@ -60,8 +56,6 @@ class Excel_compiler:
             worksheet.Range(str(column_to_fill) + str(first_row_to_change) + ":" + str(column_to_fill) + str(
                 last_row_to_change)).Value = Code_to_add
 
-
-
     def Unique_code_lister(self):
         # Loop to create a list of all the codes to find
         list_of_all_codes = []
@@ -69,7 +63,7 @@ class Excel_compiler:
             if "Code" in str(worksheet.Cells(test, 3).Value):
                 continue
             else:
-                print(str(test)+" / "+str(new_last_row))
+                print("Calcul de tous les codes : "+ str(test)+" / "+str(new_last_row))
                 list_of_all_codes.append(int(worksheet.Cells(test, 3).Value))
         unique_list = numpy.unique(list_of_all_codes)
         print(unique_list)
@@ -88,10 +82,11 @@ start = time. time()
 for file_number in range(0,4):
 
     input_file = my_json_file_data['filename'][file_number]
+    print("Ceci est mon input file : "+str(input_file))
 
     if file_number == 0:
         output_file = 'Bible resultat.xlsx'
-        print('Conversion du fichier' + str(input_file))
+        print('Conversion du fichier : ' + str(input_file))
     else :
         output_file = 'fichier_supplementaire'+str(file_number)+'.xlsx'
 
@@ -124,7 +119,7 @@ for file_number in range(0,4):
 
     # open the file that was saved
     workbook = excel.Workbooks.Open(os.path.abspath(output_file))
-    print('excel sheet opened')
+    print('excel sheet'+str(output_file)+'opened')
     worksheet = workbook.Worksheets('Sheet')
 
     #Sorts the lines and deletes the files with TOTAL in them
@@ -198,7 +193,7 @@ for file_number in range(0,4):
     #Calculates a list of unique codes from the method
     my_unique_list = Excel_compiler.Unique_code_lister('self')
     max_number_code = len(my_unique_list)
-    print("List has been calculated")
+    print("La liste à été calculé")
 
     #-----------------------------------------------------------------------------------------------------------------------
     #Opens excel instance with the wanted REP file from the Open method
@@ -291,13 +286,11 @@ for file_number in range(0,4):
                 pass
             else:
                 print('A modifier -- ligne : '+ str(iteration_PPN) + ' / '+str(last_row_PPN))
-                print(str(worksheet.Cells(My_row_PPN,22).Value) + " =/= " + str(worksheet_PPN.Cells(iteration_PPN,12).Value))
                 My_last_row_PPN = My_row_PPN
                 while worksheet.Cells(My_last_row_PPN,7).Value==worksheet.Cells(My_last_row_PPN + 1,7).Value :
                     My_last_row_PPN = My_last_row_PPN + 1
                 worksheet_PPN.Cells(iteration_PPN,12).Copy()
                 worksheet.Range("V" + str(My_row_PPN) + ":V" + str(My_last_row_PPN)).PasteSpecial(Paste=-4163)
-                print("Valeur : "+ str(worksheet.Cells(My_last_row_PPN,7).Value)+" Début : "+str(My_row_PPN)+ " // Fin : " + str(My_last_row_PPN))
                 My_row_PPN = My_last_row_PPN
 
         except AttributeError:
@@ -350,3 +343,28 @@ for file_number in range(0,4):
     print('Temps de complétion : '+str(int((stop-start)/60))+ ' minutes')
 
 stacker.file_stacker('self')
+
+final_text ="""
+███████╗██╗███╗░░██╗  
+██╔════╝██║████╗░██║  
+█████╗░░██║██╔██╗██║  
+██╔══╝░░██║██║╚████║  
+██║░░░░░██║██║░╚███║  
+╚═╝░░░░░╚═╝╚═╝░░╚══╝  
+
+██████╗░██╗░░░██╗  
+██╔══██╗██║░░░██║  
+██║░░██║██║░░░██║  
+██║░░██║██║░░░██║  
+██████╔╝╚██████╔╝  
+╚═════╝░░╚═════╝░  
+
+████████╗██████╗░░█████╗░██╗████████╗███████╗███╗░░░███╗███████╗███╗░░██╗████████╗
+╚══██╔══╝██╔══██╗██╔══██╗██║╚══██╔══╝██╔════╝████╗░████║██╔════╝████╗░██║╚══██╔══╝
+░░░██║░░░██████╔╝███████║██║░░░██║░░░█████╗░░██╔████╔██║█████╗░░██╔██╗██║░░░██║░░░
+░░░██║░░░██╔══██╗██╔══██║██║░░░██║░░░██╔══╝░░██║╚██╔╝██║██╔══╝░░██║╚████║░░░██║░░░
+░░░██║░░░██║░░██║██║░░██║██║░░░██║░░░███████╗██║░╚═╝░██║███████╗██║░╚███║░░░██║░░░
+░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░░╚═╝░░░╚══════╝╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚══╝░░░╚═╝░░░"""
+
+print(final_text)
+
