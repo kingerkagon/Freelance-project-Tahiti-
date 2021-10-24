@@ -1,0 +1,34 @@
+# BIBLE GROUPE ALINE
+
+Bible groupe Aline est un logiciel permettant de compiler les analyses de prix mensuelles et annuelles de l'année en cours et de l'année suivante.
+
+## AVANT DE LANCER LE PROGRAMME
+
+Il faut convertir les fichiers .out en fichiers .txt
+Pour cela, ouvrez les fichiers 1 par 1 à partir du bloc note, et cliquez sur "enregistrer sous", ajouté "convertit" à la fin du nom du fichier et
+choisissez l'endroit où vous voulez le sauvegarder. Vérifiez que le format du fichier sauvegarde est bien .txt. 
+
+Placez les fichier anlcli.txt dans le dossier "Fichier de stockage". Ajouter aussi les fichier "REP Client", "Fichier PPN","Classification produit" et "Categorie Client".
+
+Changez le nom du fichier "catégorie" pour qu'il ne contienne pas d'accent.
+
+Fermer complètement toutes les instances d'excel ouvertes 
+
+## POUR LANCER LE PROGRAMME
+
+Double cliquez sur le fichier "Main" ou sur le raccourci "Traitement de la bible".
+
+Une fenêtre va s'ouvrir, choisir chacuns des fichiers analcli, cliquez sur "suivant.
+
+Faire de même pour REP, fichier PPN, classification et categorie client.
+
+Cliquez sur "compiler", l'avancée du traitement sera affichée sur l'invite de commande qui à été ouverte lors de l'éxecution du programme. 
+
+## FICHIERS EN SORTIE
+
+1 fichier .xlsx nommé "Bible resultat" 
+
+## AUTEUR
+
+Eric STUHLFAUTH
+eric.stuhlfauth@gmail.com
